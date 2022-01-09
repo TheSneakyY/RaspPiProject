@@ -9,3 +9,14 @@ C:\Users\Kamil\WORKSPACE\studia\RaspPiProject\RaspPiProjectUI\RaspPiProjectUI\ob
 C:\Users\Kamil\WORKSPACE\studia\RaspPiProject\RaspPiProjectUI\RaspPiProjectUI\obj\Debug\RaspPiProjectUI.csproj.CoreCompileInputs.cache
 C:\Users\Kamil\WORKSPACE\studia\RaspPiProject\RaspPiProjectUI\RaspPiProjectUI\obj\Debug\RaspPiProjectUI.exe
 C:\Users\Kamil\WORKSPACE\studia\RaspPiProject\RaspPiProjectUI\RaspPiProjectUI\obj\Debug\RaspPiProjectUI.pdb
+C:\Users\klaud\Pulpit\Kmail\RaspPiProject\RaspPiProjectUI\RaspPiProjectUI\bin\Debug\RaspPiProjectUI.exe.config
+C:\Users\klaud\Pulpit\Kmail\RaspPiProject\RaspPiProjectUI\RaspPiProjectUI\bin\Debug\RaspPiProjectUI.exe
+C:\Users\klaud\Pulpit\Kmail\RaspPiProject\RaspPiProjectUI\RaspPiProjectUI\bin\Debug\RaspPiProjectUI.pdb
+C:\Users\klaud\Pulpit\Kmail\RaspPiProject\RaspPiProjectUI\RaspPiProjectUI\obj\Debug\RaspPiProjectUI.csproj.AssemblyReference.cache
+C:\Users\klaud\Pulpit\Kmail\RaspPiProject\RaspPiProjectUI\RaspPiProjectUI\obj\Debug\RaspPiProjectUI.csproj.SuggestedBindingRedirects.cache
+C:\Users\klaud\Pulpit\Kmail\RaspPiProject\RaspPiProjectUI\RaspPiProjectUI\obj\Debug\RaspPiProjectUI.MainWindow.resources
+C:\Users\klaud\Pulpit\Kmail\RaspPiProject\RaspPiProjectUI\RaspPiProjectUI\obj\Debug\RaspPiProjectUI.Properties.Resources.resources
+C:\Users\klaud\Pulpit\Kmail\RaspPiProject\RaspPiProjectUI\RaspPiProjectUI\obj\Debug\RaspPiProjectUI.csproj.GenerateResource.cache
+C:\Users\klaud\Pulpit\Kmail\RaspPiProject\RaspPiProjectUI\RaspPiProjectUI\obj\Debug\RaspPiProjectUI.csproj.CoreCompileInputs.cache
+C:\Users\klaud\Pulpit\Kmail\RaspPiProject\RaspPiProjectUI\RaspPiProjectUI\obj\Debug\RaspPiProjectUI.exe
+C:\Users\klaud\Pulpit\Kmail\RaspPiProject\RaspPiProjectUI\RaspPiProjectUI\obj\Debug\RaspPiProjectUI.pdb
