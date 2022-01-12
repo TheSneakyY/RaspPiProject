@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.0.31919.166
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32106.194
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RaspPiProjectUI", "RaspPiProjectUI\RaspPiProjectUI.csproj", "{4AF8CE7D-E36B-43BF-9788-64BD662636FB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RaspPiProjectUI", "RaspPiProjectUI\RaspPiProjectUI.csproj", "{B15129A6-5A40-401B-BBDF-F540F1652604}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{4AF8CE7D-E36B-43BF-9788-64BD662636FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4AF8CE7D-E36B-43BF-9788-64BD662636FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4AF8CE7D-E36B-43BF-9788-64BD662636FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4AF8CE7D-E36B-43BF-9788-64BD662636FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B15129A6-5A40-401B-BBDF-F540F1652604}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B15129A6-5A40-401B-BBDF-F540F1652604}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B15129A6-5A40-401B-BBDF-F540F1652604}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B15129A6-5A40-401B-BBDF-F540F1652604}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {B5DDE0FB-9BB0-4F79-9E08-2FC16BC0AB59}
+		SolutionGuid = {F7EF2185-1702-4D19-BC46-A6BA8D5A2961}
 	EndGlobalSection
 EndGlobal

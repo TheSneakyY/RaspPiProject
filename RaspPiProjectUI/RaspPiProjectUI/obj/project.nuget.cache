@@ -1,0 +1,55 @@
+{
+  "version": 2,
+  "dgSpecHash": "7bjc/KFyQWiDftjxk/iOhoEte7UEHo0WptRp66pCoitBCIdehgQAzzxHet8IjJzXpADqNdg12fOz+l59QzWFZQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\klaud\\Pulpit\\Kmail\\RaspPiProject\\RaspPiProjectUI\\RaspPiProjectUI\\RaspPiProjectUI.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\klaud\\.nuget\\packages\\eto.forms\\2.5.11\\eto.forms.2.5.11.nupkg.sha512",
+    "C:\\Users\\klaud\\.nuget\\packages\\eto.platform.wpf\\2.5.11\\eto.platform.wpf.2.5.11.nupkg.sha512",
+    "C:\\Users\\klaud\\.nuget\\packages\\extended.wpf.toolkit\\3.6.0\\extended.wpf.toolkit.3.6.0.nupkg.sha512",
+    "C:\\Users\\klaud\\.nuget\\packages\\system.componentmodel.annotations\\4.7.0\\system.componentmodel.annotations.4.7.0.nupkg.sha512",
+    "C:\\Users\\klaud\\.nuget\\packages\\windows7apicodepack-core\\1.1.0\\windows7apicodepack-core.1.1.0.nupkg.sha512",
+    "C:\\Users\\klaud\\.nuget\\packages\\windows7apicodepack-shell\\1.1.0\\windows7apicodepack-shell.1.1.0.nupkg.sha512",
+    "C:\\Users\\klaud\\.nuget\\packages\\microsoft.netcore.app.runtime.linux-x64\\5.0.13\\microsoft.netcore.app.runtime.linux-x64.5.0.13.nupkg.sha512",
+    "C:\\Users\\klaud\\.nuget\\packages\\microsoft.netcore.app.host.linux-x64\\5.0.13\\microsoft.netcore.app.host.linux-x64.5.0.13.nupkg.sha512",
+    "C:\\Users\\klaud\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\5.0.13\\microsoft.netcore.app.runtime.win-x64.5.0.13.nupkg.sha512",
+    "C:\\Users\\klaud\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\5.0.13\\microsoft.aspnetcore.app.runtime.win-x64.5.0.13.nupkg.sha512",
+    "C:\\Users\\klaud\\.nuget\\packages\\microsoft.netcore.app.runtime.osx-x64\\5.0.13\\microsoft.netcore.app.runtime.osx-x64.5.0.13.nupkg.sha512",
+    "C:\\Users\\klaud\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\5.0.13\\microsoft.windowsdesktop.app.runtime.win-x64.5.0.13.nupkg.sha512",
+    "C:\\Users\\klaud\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.osx-x64\\5.0.13\\microsoft.aspnetcore.app.runtime.osx-x64.5.0.13.nupkg.sha512",
+    "C:\\Users\\klaud\\.nuget\\packages\\microsoft.netcore.app.host.osx-x64\\5.0.13\\microsoft.netcore.app.host.osx-x64.5.0.13.nupkg.sha512",
+    "C:\\Users\\klaud\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.linux-x64\\5.0.13\\microsoft.aspnetcore.app.runtime.linux-x64.5.0.13.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Pakiet „Extended.Wpf.Toolkit 3.6.0” został przywrócony przy użyciu elementu „.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8” zamiast platformy docelowej projektu „net5.0-windows7.0”. Ten pakiet może nie być w pełni kompatybilny z Twoim projektem.",
+      "libraryId": "Extended.Wpf.Toolkit",
+      "targetGraphs": [
+        "net5.0-windows7.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Pakiet „Windows7APICodePack-Core 1.1.0” został przywrócony przy użyciu elementu „.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8” zamiast platformy docelowej projektu „net5.0-windows7.0”. Ten pakiet może nie być w pełni kompatybilny z Twoim projektem.",
+      "libraryId": "Windows7APICodePack-Core",
+      "targetGraphs": [
+        "net5.0-windows7.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Pakiet „Windows7APICodePack-Shell 1.1.0” został przywrócony przy użyciu elementu „.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8” zamiast platformy docelowej projektu „net5.0-windows7.0”. Ten pakiet może nie być w pełni kompatybilny z Twoim projektem.",
+      "libraryId": "Windows7APICodePack-Shell",
+      "targetGraphs": [
+        "net5.0-windows7.0"
+      ]
+    }
+  ]
+}
