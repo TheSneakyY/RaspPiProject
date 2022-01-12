@@ -28,18 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.label1 = new System.Windows.Forms.Label();
-            this.wykres = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.period = new System.Windows.Forms.GroupBox();
             this.day = new System.Windows.Forms.Button();
             this.month = new System.Windows.Forms.Button();
             this.week = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.wykres)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.period.SuspendLayout();
@@ -55,24 +50,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Hello World";
             this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // wykres
-            // 
-            chartArea1.Name = "ChartArea1";
-            this.wykres.ChartAreas.Add(chartArea1);
-            this.wykres.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            legend1.Name = "Legend1";
-            this.wykres.Legends.Add(legend1);
-            this.wykres.Location = new System.Drawing.Point(12, 68);
-            this.wykres.Name = "wykres";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.wykres.Series.Add(series1);
-            this.wykres.Size = new System.Drawing.Size(1238, 509);
-            this.wykres.TabIndex = 1;
-            this.wykres.Text = "chart1";
             // 
             // panel1
             // 
@@ -139,11 +116,9 @@
             this.ClientSize = new System.Drawing.Size(1262, 673);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.wykres);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "MainWindow";
             this.Text = "RaspPiProject";
-            ((System.ComponentModel.ISupportInitialize)(this.wykres)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -155,7 +130,6 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataVisualization.Charting.Chart wykres;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.GroupBox period;
