@@ -59,7 +59,7 @@ class Main:
         self.figure2 = plt.Figure(figsize=(5, 4), dpi=100)
         self.ax2 = self.figure2.add_subplot(111)
         self.line2 = FigureCanvasTkAgg(self.figure2, self.window)
-        self.line2.get_tk_widget().place(x=20, y=100, width=400)
+        self.line2.get_tk_widget().place(x=20, y=100, width=1000, height=550)
         self.df2 = self.df2[['Year', 'Unemployment_Rate']].groupby('Year').sum()
         self.df2.plot(kind='line', legend=True, ax=self.ax2, color='r', marker='o', fontsize=10)
         self.ax2.set_title('Year Vs. Unemployment Rate')
