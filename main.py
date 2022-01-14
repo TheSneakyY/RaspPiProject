@@ -6,6 +6,8 @@ from pandas import DataFrame
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 
+import db
+
 
 class PERIOD_MODE(Enum):
     DAY = 0,
@@ -74,7 +76,8 @@ class Main:
 
         self.temp_button.configure(command=self.temp_btn_click)
         self.press_button.configure(command=self.press_btn_click)
-
+        db.init_db()
+        self.db_con = db.create_connection()
         self.data = {
             'Data': ['2022-01-02 8:00:00', '2022-01-02 8:01:00', '2022-01-02 8:02:00', '2022-01-02 8:03:00',
                      '2022-01-02 8:04:00', '2022-01-02 8:05:00', '2022-01-02 8:06:00', '2022-01-02 8:07:00',
@@ -107,7 +110,7 @@ class Main:
             self.temp_df = DataFrame(data, columns=['Data', 'Temperature'])
             self.press_df = DataFrame(data, columns=['Data', 'Pressure'])
             self.ax = self.figure.add_subplot(111)
-            self.ax.set_title('Temperature')
+            self.ax.set_title('Temperatura i cisnienie')
 
             self.line = FigureCanvasTkAgg(self.figure, self.window)
             self.line.get_tk_widget().place(x=10, y=10, width=850, height=500)
