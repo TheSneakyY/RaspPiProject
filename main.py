@@ -46,10 +46,10 @@ class Main:
     def __init__(self):
         self.window = tkinter.Tk()
         self.window.title("RaspPiProject")
-        self.window.geometry("1000x600")
+        self.window.geometry("850x600")
         self.window.resizable(width=False, height=False)
 
-        self.canvas = tkinter.Canvas(self.window, width=1000, height=600)
+        self.canvas = tkinter.Canvas(self.window, width=850, height=600)
         self.canvas.grid()
 
         self.day_button = tkinter.Button(self.window, text="Dzień")
@@ -59,12 +59,12 @@ class Main:
         self.temp_button = tkinter.Button(self.window, text="Temperatura")
         self.press_button = tkinter.Button(self.window, text="Ciśnienie")
 
-        self.day_button.place(x=20, y=560, width=self.default_width)
-        self.week_button.place(x=120, y=560, width=self.default_width)
-        self.month_button.place(x=220, y=560, width=self.default_width)
+        self.day_button.place(x=20, y=540, width=self.default_width)
+        self.week_button.place(x=120, y=540, width=self.default_width)
+        self.month_button.place(x=220, y=540, width=self.default_width)
 
-        self.temp_button.place(x=720, y=560, width=self.default_width)
-        self.press_button.place(x=820, y=560, width=self.default_width)
+        self.temp_button.place(x=620, y=540, width=self.default_width)
+        self.press_button.place(x=720, y=540, width=self.default_width)
 
         self.day_button["state"] = DISABLED
 
@@ -110,7 +110,7 @@ class Main:
             self.ax.set_title('Temperature')
 
             self.line = FigureCanvasTkAgg(self.figure, self.window)
-            self.line.get_tk_widget().place(x=10, y=10, width=900, height=500)
+            self.line.get_tk_widget().place(x=10, y=10, width=850, height=500)
 
             self.temp_df = self.temp_df[['Data', 'Temperature']]
             self.press_df = self.press_df[['Data', 'Pressure']]
