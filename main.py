@@ -34,13 +34,13 @@ class Main:
     def temp_btn_click(self):
         self.temp_active = not self.temp_active
         self.line.get_tk_widget().place_forget()
-
+        self.update_data()
         self.create_plot(self.data)
 
     def press_btn_click(self):
         self.press_active = not self.press_active
         self.line.get_tk_widget().place_forget()
-
+        self.update_data()
         self.create_plot(self.data)
 
     def __init__(self):
