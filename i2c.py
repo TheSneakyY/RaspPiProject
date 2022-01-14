@@ -11,6 +11,7 @@ bus.write_byte_data(bmp_addr, 0xf4, ((5 << 5) | (3 << 0)))
 
 # global values
 data = 0
+package = {'Data': [], 'Temperature': [], 'Pressure': []}
 
 # calculation of preasure and temperature
 dig_T1 = bus.read_word_data(bmp_addr, 0x88)
@@ -65,7 +66,9 @@ def temperature():
 
     print("Temperature: " + str(T))
 
-    return t_fine
+    P = pressure(t_fine)
+
+    return package(T, P, data)
 
 
 def pressure(t_fine):
@@ -97,18 +100,15 @@ def pressure(t_fine):
 
 
 def package(T, P, data):
-    package = {'Data': [], 'Temperature': [], 'Pressure': []}
     data = data + 1
     package['Data'].append(data)
     package['Temperature'].append(T)
     package['Pressure'].append(P)
+    print(package)
     return package
 
 
 while True:
-    T = temperature()
-    P = pressure(T)
+    combined_data = temperature()
     data = data + 1
-    package(T, P, data)
-    print(package())
     time.sleep(1)
