@@ -1,5 +1,6 @@
 import time
 from smbus2 import SMBus
+from datetime import datetime
 
 bus = SMBus(1)
 bmp_addr = 0x76
@@ -10,8 +11,7 @@ bus.write_byte_data(bmp_addr, 0xf5, (5 << 5))
 bus.write_byte_data(bmp_addr, 0xf4, ((5 << 5) | (3 << 0)))
 
 # global values
-data = 0
-package = {'Data': [], 'Temperature': [], 'Pressure': []}
+combined_data = {'Data': [], 'Temperature': [], 'Pressure': []}
 
 # calculation of preasure and temperature
 dig_T1 = bus.read_word_data(bmp_addr, 0x88)
@@ -86,29 +86,25 @@ def pressure(t_fine):
     if var1 == 0:
         return 0
     p = 1048576.0 - adc_P
-    print(adc_P)
     p = (p - (var2 / 4096.0)) * 6250.0 / var1
-    print(p)
     var1 = dig_P9 * p * p / 2147483648.0
     var2 = p * dig_P8 / 32768.0
     p = p + (var1 + var2 + dig_P7) / 16
-    print(t_fine)
     print("Pressure: " + str(p))
 
     return p
 
 
-def package(T, P, data):
-    package['Data'].append(data)
-    package['Temperature'].append(T)
-    package['Pressure'].append(P)
-    print(package)
-    return package
+def package(T, P, combined_data):
+    combined_data['Data'].append(datetime.datetime)
+    combined_data['Temperature'].append(T)
+    combined_data['Pressure'].append(P)
+    print(combined_data)
+    return combined_data
 
 
 while True:
     temp_data = temperature()
     P = pressure(temp_data[0])
-    package(temp_data[1], P, data)
-    data = data + 1
+    package(temp_data[1], P, combined_data)
     time.sleep(1)
