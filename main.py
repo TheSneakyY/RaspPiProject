@@ -7,6 +7,7 @@ import matplotlib.pyplot as plt
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 
 import db
+import i2c
 
 
 class PERIOD_MODE(Enum):
@@ -78,13 +79,14 @@ class Main:
         self.press_button.configure(command=self.press_btn_click)
         db.init_db()
         self.db_con = db.create_connection()
-        self.data = {
-            'Data': ['2022-01-02 8:00:00', '2022-01-02 8:01:00', '2022-01-02 8:02:00', '2022-01-02 8:03:00',
-                     '2022-01-02 8:04:00', '2022-01-02 8:05:00', '2022-01-02 8:06:00', '2022-01-02 8:07:00',
-                     '2022-01-02 8:08:00', '2022-01-02 8:09:00'],
-            'Temperature': [10, 11, 11.1, 11.1, 11.2, 7, 6.5, 6.2, 5.5, 4],
-            'Pressure': [12, 11, 11, 11.1, 5, 7, 6.5, 6.2, 5.5, 4]
-        }
+        # self.data = {
+        #    'Data': ['2022-01-02 8:00:00', '2022-01-02 8:01:00', '2022-01-02 8:02:00', '2022-01-02 8:03:00',
+        #             '2022-01-02 8:04:00', '2022-01-02 8:05:00', '2022-01-02 8:06:00', '2022-01-02 8:07:00',
+        #             '2022-01-02 8:08:00', '2022-01-02 8:09:00'],
+        #    'Temperature': [10, 11, 11.1, 11.1, 11.2, 7, 6.5, 6.2, 5.5, 4],
+        #    'Pressure': [12, 11, 11, 11.1, 5, 7, 6.5, 6.2, 5.5, 4]
+        # }
+        self.data = i2c.combined_data
         self.create_plot(self.data)
 
         self.window.mainloop()
@@ -124,7 +126,7 @@ class Main:
                 self.press_df.plot(kind='line', legend=True, ax=self.ax, color='b', marker='o', fontsize=10)
 
     def update_data(self):
-        # self.data = i2c.combined_data
+        self.data = i2c.combined_data
         pass
 
 
