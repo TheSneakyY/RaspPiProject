@@ -96,7 +96,8 @@ def pressure(t_fine):
 
 
 def package(T, P, combined_data):
-    combined_data['Data'].append(datetime.datetime)
+    now = datetime.now()
+    combined_data['Data'].append(now.strftime("%Y-%m-%d %H:%M:%S"))
     combined_data['Temperature'].append(T)
     combined_data['Pressure'].append(P)
     print(combined_data)
