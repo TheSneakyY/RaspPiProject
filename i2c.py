@@ -60,16 +60,14 @@ def temperature():
 
     var1 = (((adc_T >> 3) - (dig_T1 << 1)) * dig_T2) >> 11
     var2 = (((((adc_T >> 4) - dig_T1) * ((adc_T >> 4) - dig_T1)) >> 12) * dig_T3) >> 14
-    t_fine = var1 + var2;
+    t_fine = var1 + var2
     T = (t_fine * 5 + 128) >> 8
     T = T / 100
 
     print("Temperature: " + str(T))
+    temp_data = [t_fine, T]
 
-    P = pressure(t_fine)
-
-    return package(T, P, data)
-
+    return temp_data
 
 
 def pressure(t_fine):
@@ -85,7 +83,7 @@ def pressure(t_fine):
     var2 = (var2 / 4.0) + dig_P4 * 65536.0
     var1 = dig_P3 * var1 * var1 / 524288.0 + dig_P2 * var1 / 524288.0
     var1 = (1.0 + var1 / 32768.0) * dig_P1
-    if (var1 == 0):
+    if var1 == 0:
         return 0
     p = 1048576.0 - adc_P
     print(adc_P)
@@ -101,7 +99,6 @@ def pressure(t_fine):
 
 
 def package(T, P, data):
-    data = data + 1
     package['Data'].append(data)
     package['Temperature'].append(T)
     package['Pressure'].append(P)
@@ -110,6 +107,8 @@ def package(T, P, data):
 
 
 while True:
-    combined_data = temperature()
+    temp_data = temperature()
+    P = pressure(temp_data[0])
+    package(temp_data[1], P, data)
     data = data + 1
     time.sleep(1)
