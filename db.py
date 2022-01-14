@@ -2,7 +2,7 @@ import sqlite3
 
 
 def init_db():
-    connection = sqlite3.connect('C:\\Users\\klaud\\Pulpit\\Kmail\\RaspPiProject\\temp_and_press.db')
+    connection = sqlite3.connect('temp_and_press.db')
     cursor = connection.cursor()
 
     cursor.execute('''CREATE TABLE IF NOT EXISTS Temperatures
@@ -17,7 +17,7 @@ def init_db():
 def create_connection():
     conn = None
     try:
-        conn = sqlite3.connect('C:\\Users\\klaud\\Pulpit\\Kmail\\temp_and_press.db')
+        conn = sqlite3.connect('temp_and_press.db')
     except Exception as e:
         print(e)
 

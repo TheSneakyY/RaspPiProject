@@ -1,4 +1,5 @@
 import time
+import db
 from smbus2 import SMBus
 from datetime import datetime
 
@@ -12,6 +13,9 @@ bus.write_byte_data(bmp_addr, 0xf4, ((5 << 5) | (3 << 0)))
 
 # global values
 combined_data = {'Data': [], 'Temperature': [], 'Pressure': []}
+
+#creating connection to db
+conn = db.create_connection()
 
 # calculation of preasure and temperature
 dig_T1 = bus.read_word_data(bmp_addr, 0x88)
@@ -64,7 +68,6 @@ def temperature():
     T = (t_fine * 5 + 128) >> 8
     T = T / 100
 
-    print("Temperature: " + str(T))
     temp_data = [t_fine, T]
 
     return temp_data
@@ -90,7 +93,6 @@ def pressure(t_fine):
     var1 = dig_P9 * p * p / 2147483648.0
     var2 = p * dig_P8 / 32768.0
     p = p + (var1 + var2 + dig_P7) / 16
-    print("Pressure: " + str(p))
 
     return p
 
@@ -100,7 +102,6 @@ def package(T, P, combined_data):
     combined_data['Data'].append(now.strftime("%Y-%m-%d %H:%M:%S"))
     combined_data['Temperature'].append(T)
     combined_data['Pressure'].append(P)
-    print(combined_data)
     return combined_data
 
 
@@ -108,4 +109,6 @@ while True:
     temp_data = temperature()
     P = pressure(temp_data[0])
     package(temp_data[1], P, combined_data)
+    db.add_temperature(conn, combined_data['Data'], combined_data['Temperature'])
+    db.add_pressure(conn, combined_data['Data'],combined_data['Pressure'])
     time.sleep(1)
