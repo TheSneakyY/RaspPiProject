@@ -16,6 +16,8 @@ class PERIOD_MODE(Enum):
 class Main:
     default_width = 100
     active_mode = PERIOD_MODE.DAY
+    temp_active = False
+    press_active = False
 
     def day_btn_click(self):
         self.active_mode = PERIOD_MODE.DAY
@@ -28,6 +30,18 @@ class Main:
     def month_btn_click(self):
         self.active_mode = PERIOD_MODE.MONTH
         self.refresh_buttons()
+
+    def temp_btn_click(self):
+        self.temp_active = not self.temp_active
+        self.line.get_tk_widget().place_forget()
+
+        self.create_plot(self.data)
+
+    def press_btn_click(self):
+        self.press_active = not self.press_active
+        self.line.get_tk_widget().place_forget()
+
+        self.create_plot(self.data)
 
     def __init__(self):
         self.window = tkinter.Tk()
@@ -45,28 +59,33 @@ class Main:
         self.week_button = tkinter.Button(self.window, text="Tydzień")
         self.month_button = tkinter.Button(self.window, text="Miesiąc")
 
+        self.temp_button = tkinter.Button(self.window, text="Temperatura")
+        self.press_button = tkinter.Button(self.window, text="Ciśnienie")
+
         self.day_button.place(x=20, y=660, width=self.default_width)
         self.week_button.place(x=120, y=660, width=self.default_width)
         self.month_button.place(x=220, y=660, width=self.default_width)
 
+        self.temp_button.place(x=1020, y=660, width=self.default_width)
+        self.press_button.place(x=1120, y=660, width=self.default_width)
+
         self.day_button["state"] = DISABLED
-
-        self.data2 = {'Year': [1920, 1930, 1940, 1950, 1960, 1970, 1980, 1990, 2000, 2010],
-                      'Unemployment_Rate': [9.8, 12, 8, 7.2, 6.9, 7, 6.5, 6.2, 5.5, 6.3]
-                      }
-        self.df2 = DataFrame(self.data2, columns=['Year', 'Unemployment_Rate'])
-
-        self.figure2 = plt.Figure(figsize=(5, 4), dpi=100)
-        self.ax2 = self.figure2.add_subplot(111)
-        self.line2 = FigureCanvasTkAgg(self.figure2, self.window)
-        self.line2.get_tk_widget().place(x=20, y=100, width=1000, height=550)
-        self.df2 = self.df2[['Year', 'Unemployment_Rate']].groupby('Year').sum()
-        self.df2.plot(kind='line', legend=True, ax=self.ax2, color='r', marker='o', fontsize=10)
-        self.ax2.set_title('Year Vs. Unemployment Rate')
 
         self.day_button.configure(command=self.day_btn_click)
         self.week_button.configure(command=self.week_btn_click)
         self.month_button.configure(command=self.month_btn_click)
+
+        self.temp_button.configure(command=self.temp_btn_click)
+        self.press_button.configure(command=self.press_btn_click)
+
+        self.data = {
+            'Data': ['2022-01-02 8:00:00', '2022-01-02 8:01:00', '2022-01-02 8:02:00', '2022-01-02 8:03:00',
+                     '2022-01-02 8:04:00', '2022-01-02 8:05:00', '2022-01-02 8:06:00', '2022-01-02 8:07:00',
+                     '2022-01-02 8:08:00', '2022-01-02 8:09:00'],
+            'Temperature': [10, 11, 11.1, 11.1, 11.2, 7, 6.5, 6.2, 5.5, 4],
+            'Pressure': [12, 11, 11, 11.1, 5, 7, 6.5, 6.2, 5.5, 4]
+        }
+        self.create_plot(self.data)
 
         self.window.mainloop()
 
@@ -83,6 +102,30 @@ class Main:
             self.month_button["state"] = DISABLED
             self.day_button["state"] = NORMAL
             self.week_button["state"] = NORMAL
+
+    def create_plot(self, data):
+        self.figure = plt.Figure(figsize=(6, 4), dpi=100)
+
+        if data is not None:
+            self.temp_df = DataFrame(data, columns=['Data', 'Temperature'])
+            self.press_df = DataFrame(data, columns=['Data', 'Pressure'])
+            self.ax = self.figure.add_subplot(111)
+            self.ax.set_title('Temperature')
+
+            self.line = FigureCanvasTkAgg(self.figure, self.window)
+            self.line.get_tk_widget().place(x=120, y=50, width=1000, height=550)
+
+            self.temp_df = self.temp_df[['Data', 'Temperature']]
+            self.press_df = self.press_df[['Data', 'Pressure']]
+
+            if self.temp_active:
+                self.temp_df.plot(kind='line', legend=True, ax=self.ax, color='r', marker='o', fontsize=10)
+            if self.press_active:
+                self.press_df.plot(kind='line', legend=True, ax=self.ax, color='b', marker='o', fontsize=10)
+
+    def update_data(self):
+        # self.data = i2c.combined_data
+        pass
 
 
 main = Main()
