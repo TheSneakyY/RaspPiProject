@@ -46,14 +46,11 @@ class Main:
     def __init__(self):
         self.window = tkinter.Tk()
         self.window.title("RaspPiProject")
-        self.window.geometry("1280x720")
+        self.window.geometry("1000x600")
         self.window.resizable(width=False, height=False)
 
-        self.canvas = tkinter.Canvas(self.window, width=1280, height=720)
+        self.canvas = tkinter.Canvas(self.window, width=1000, height=600)
         self.canvas.grid()
-
-        self.hwlabel = tkinter.Label(self.window, text="Dane za okres: ")
-        self.hwlabel.place(x=20, y=20)
 
         self.day_button = tkinter.Button(self.window, text="Dzień")
         self.week_button = tkinter.Button(self.window, text="Tydzień")
@@ -62,12 +59,12 @@ class Main:
         self.temp_button = tkinter.Button(self.window, text="Temperatura")
         self.press_button = tkinter.Button(self.window, text="Ciśnienie")
 
-        self.day_button.place(x=20, y=660, width=self.default_width)
-        self.week_button.place(x=120, y=660, width=self.default_width)
-        self.month_button.place(x=220, y=660, width=self.default_width)
+        self.day_button.place(x=20, y=560, width=self.default_width)
+        self.week_button.place(x=120, y=560, width=self.default_width)
+        self.month_button.place(x=220, y=560, width=self.default_width)
 
-        self.temp_button.place(x=1020, y=660, width=self.default_width)
-        self.press_button.place(x=1120, y=660, width=self.default_width)
+        self.temp_button.place(x=720, y=560, width=self.default_width)
+        self.press_button.place(x=820, y=560, width=self.default_width)
 
         self.day_button["state"] = DISABLED
 
@@ -113,7 +110,7 @@ class Main:
             self.ax.set_title('Temperature')
 
             self.line = FigureCanvasTkAgg(self.figure, self.window)
-            self.line.get_tk_widget().place(x=120, y=50, width=1000, height=550)
+            self.line.get_tk_widget().place(x=10, y=10, width=900, height=500)
 
             self.temp_df = self.temp_df[['Data', 'Temperature']]
             self.press_df = self.press_df[['Data', 'Pressure']]
